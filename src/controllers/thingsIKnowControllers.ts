@@ -11,3 +11,10 @@ export const getKnownThingById = (req: Request, res: Response) => {
 
   res.status(200).json({ knownThing });
 };
+
+export const deleterKnownThingsById = (req: Request, res: Response) => {
+  const { id } = req.params;
+  knwonThings.splice(+id - 1, 1);
+
+  res.status(201).json({ knwonThings });
+};
