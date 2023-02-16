@@ -1,6 +1,6 @@
 export interface ThingStructure {
   id: number;
-  name: string;
+  things: string;
 }
 
 export type ThingsStructure = ThingStructure[];

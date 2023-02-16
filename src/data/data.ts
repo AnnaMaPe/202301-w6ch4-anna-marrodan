@@ -1,16 +1,16 @@
 import { type ThingsStructure } from "./types";
 
-export const knwonThings: ThingsStructure = [
+export const knownThings: ThingsStructure = [
   {
     id: 1,
-    name: "Eat conitos",
+    things: "Eat conitos",
   },
   {
     id: 2,
-    name: "Install huskys",
+    things: "Install huskys",
   },
   {
     id: 3,
-    name: "Stress myself because of the configs",
+    things: "Stress myself because of the configs",
   },
 ];
