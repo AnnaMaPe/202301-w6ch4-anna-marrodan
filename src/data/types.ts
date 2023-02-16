@@ -1,6 +1,6 @@
-export interface ThingyStructure {
+export interface ThingStructure {
   id: number;
   name: string;
 }
 
-export type ThingiesStructure = ThingyStructure[];
+export type ThingsStructure = ThingStructure[];

@@ -1,6 +1,6 @@
-import { type ThingiesStructure } from "./types";
+import { type ThingsStructure } from "./types";
 
-export const thingiesIKnow: ThingiesStructure = [
+export const thingsIKnow: ThingsStructure = [
   {
     id: 1,
     name: "Eat conitos",
