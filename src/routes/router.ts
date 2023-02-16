@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
-  deleterKnownThingsById,
+  createKnownThings,
+  deleteKnownThingsById,
   getKnownThingById,
   getKnownThings,
 } from "../controllers/thingsIKnowControllers.js";
@@ -10,4 +11,5 @@ export const thingsRouter = Router();
 
 thingsRouter.get("/", getKnownThings);
 thingsRouter.get("/:id", getKnownThingById);
-thingsRouter.delete("/:id", deleterKnownThingsById);
+thingsRouter.delete("/:id", deleteKnownThingsById);
+thingsRouter.post("/", createKnownThings);
