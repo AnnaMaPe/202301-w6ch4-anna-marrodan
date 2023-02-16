@@ -10,7 +10,6 @@ module.exports = {
       files: ["*.ts", "*.tsx"],
       rules: {
         "@typescript-eslint/consistent-type-definitions": "off",
-        "@typescript-eslint/naming-convention": "off",
       },
     },
   ],
