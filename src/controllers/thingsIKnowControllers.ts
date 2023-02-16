@@ -10,7 +10,11 @@ export const getKnownThingById = (req: Request, res: Response) => {
   const { id } = req.params;
   const knownThing = knwonThings.find((thing) => thing.id === +id);
 
-  res.status(200).json({ knownThing });
+  if (knownThing) {
+    res.status(200).json({ knownThing });
+  } else {
+    res.status(404).json({ error: "id not found" });
+  }
 };
 
 export const deleteKnownThingsById = (req: Request, res: Response) => {
