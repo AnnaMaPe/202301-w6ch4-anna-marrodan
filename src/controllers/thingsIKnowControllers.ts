@@ -1,27 +1,28 @@
 import { type Request, type Response } from "express";
-import { knwonThings } from "../data/data.js";
+import { knownThings } from "../data/data.js";
 import { type ThingStructure } from "../data/types.js";
 
 export const getKnownThings = (req: Request, res: Response) => {
-  res.status(200).json({ knwonThings });
+  res.status(200).json({ knwonThings: knownThings });
 };
 
 export const getKnownThingById = (req: Request, res: Response) => {
   const { id } = req.params;
-  const knownThing = knwonThings.find((thing) => thing.id === +id);
+  const knownThing = knownThings.find((thing) => thing.id === +id);
 
-  if (knownThing) {
-    res.status(200).json({ knownThing });
-  } else {
+  if (!knownThing) {
     res.status(404).json({ error: "id not found" });
+    return;
   }
+
+  res.status(200).json({ knownThing });
 };
 
 export const deleteKnownThingsById = (req: Request, res: Response) => {
   const { id } = req.params;
-  knwonThings.splice(+id - 1, 1);
+  knownThings.splice(+id - 1, 1);
 
-  res.status(200).json({ knwonThings });
+  res.status(200).json({ knwonThings: knownThings });
 };
 
 export const createKnownThings = (
@@ -34,6 +35,6 @@ export const createKnownThings = (
 ) => {
   const newKnownThing = req.body;
 
-  knwonThings.push({ ...newKnownThing, id: Date.now() });
-  res.status(200).json({ knwonThings });
+  knownThings.push({ ...newKnownThing, id: Date.now() });
+  res.status(200).json({ knwonThings: knownThings });
 };
