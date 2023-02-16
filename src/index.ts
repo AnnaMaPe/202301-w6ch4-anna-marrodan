@@ -1,4 +1,4 @@
-import "./loadEnvironment";
+import "./loadEnvironment.js";
 import * as dotenv from "dotenv";
 import express from "express";
 
@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT ?? 4000;
 
 app.get("/", (req, res) => {
-  res.json({});
+  res.status(200).json({ pong: true });
 });
 
 app.listen(port);
